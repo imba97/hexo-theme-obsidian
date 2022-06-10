@@ -14,12 +14,23 @@ v1.x | ᴅᴇsɪɢɴᴇᴅ & ᴄᴏᴅᴇᴅ ʙʏ ᴛʀɪᴅɪᴀᴍᴏɴᴅ <br
     <a href="https://gitter.im/TriDiamond/hexo-theme-obsidian?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge"><img src="https://badges.gitter.im/TriDiamond/hexo-theme-obsidian.svg"></a>
   </p>
 
-**[预览](http://tridiamond.tech)** | **[更变日志](https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG_CN.md)**
+**[预览](https://obsidian.tridiamond.tech/)** | **[更变日志](https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG_CN.md)**
 
 🇺🇸 **[English Doc](https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/README.md)** |
 **[ChangeLog](https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md)**
 
 </div>
+
+> 我正在开发一个全新的主题叫 [`Aurora`（极光）](https://github.com/auroral-ui/hexo-theme-aurora)，所以这个主题就没有那么多时间维护了。喜欢这个主题的小伙伴也可以过去看看新的主题，此主题里面有的功能新主题里面都有，而且还更多。
+
+<details>
+  <summary>查看新主题的截图</summary>
+
+![](https://img-blog.csdnimg.cn/202103280030531.png)
+
+![](https://img-blog.csdnimg.cn/20210328003140590.png)
+
+</details>
 
 ![screenshot](https://res.cloudinary.com/tridiamond/image/upload/v1573323147/blog/A-Obsidian-full_ubmo0d.png)
 
@@ -84,6 +95,25 @@ npm install
 
 ```yaml
 #! ---------------------------------------------------------------
+#!  ▄▀▄ █▀▄ ▄▀▀ ▀ █▀▄ ▀ ▄▀▄ █▄░█
+#!  █░█ █▀█ ░▀▄ █ █░█ █ █▀█ █░▀█
+#!  ░▀░ ▀▀░ ▀▀░ ▀ ▀▀░ ▀ ▀░▀ ▀░░▀
+#! ᴅᴇsɪɢɴᴇᴅ & ᴄᴏᴅᴇᴅ ʙʏ ᴛʀɪᴅɪᴀᴍᴏɴᴅ
+#! ---------------------------------------------------------------
+#! Theme Obsidian - A dark Hexo theme, it's responsive, simple but elegant.
+#! Thanks to and inspirated by CSS-Tricks
+#! @author: TriDiamond
+#! @github: https://github.com/TriDiamond
+#! @changelogs: https://github.com/TriDiamond/hexo-theme-obsidian/blob/master/CHANGELOG.md
+#! @feedbacks: https://github.com/TriDiamond/hexo-theme-obsidian/issues/new
+#! ---------------------------------------------------------------
+
+#! ---------------------------------------------------------------
+#!  █▄░█ ▄▀▄ ▀█▀ █▀▀ ▄▀▀
+#!  █░▀█ █░█ ░█░ █▀▀ ░▀▄
+#!  ▀░░▀ ░▀░ ░▀░ ▀▀▀ ▀▀░ v1.x
+#! ---------------------------------------------------------------
+#! ---------------------------------------------------------------
 #! 版本`v1.3.5`开始代码高亮已经用`codemirror`替换了`highlight.js`，
 #! 但是Hexo默认的highlight配置还是需要关闭的。
 #! ！！所以务必把Hexo默认的highlight配置改为`enable: false` ！！
@@ -94,6 +124,10 @@ npm install
 #!  auto_detect: true
 #!  tab_replace:
 #! ---------------------------------------------------------------
+
+# 主题版本
+# !! 请勿修改此字段 !!
+version: '1.4.9.3'
 
 # ---------------------------------------------------------------
 # 主题默认设置
@@ -108,6 +142,12 @@ page_titles:
   categories: 'Categories'
   tags: 'Tags'
   archives: 'Archived'
+
+# 社交媒体链接
+socials:
+  github: ""
+  twitter: ""
+  stackoverflow: ""
 
 # 是否启用目录
 TOC: true
@@ -158,6 +198,7 @@ mp3:
 # Gitalk 评论插件
 # 查看 https://github.com/gitalk/gitalk
 gitalk:
+  enable: true
   autoExpand: false
   clientID: ''
   clientSecret: ''
@@ -167,11 +208,13 @@ gitalk:
   # Ensure uniqueness and length less than 50
   id: location.pathname
   # Facebook-like distraction
+  proxy: https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token
+  # 自定义代理服务器以防止403错误
 
 # Valine 评论插件 (推荐使用!)
 # 查看 https://valine.js.org/quickstart.html
 valine:
-  enable: true
+  enable: false
   app_id:
   app_key:
   notify: false
@@ -228,6 +271,43 @@ codemirror:
 
 # 启用 mathjax 支持
 mathjax: true
+
+# 此功能仅使用国内服务器的用户需要配置，国外服务器开办网站不需要备案。
+beian: 
+# 启用备案
+  enable: true
+# 备案地区，例子：粤ICP备
+  beianloc:
+# 备案号，例子：2021022134号
+  beianid:
+
+# 公安互联网备案
+police:
+# 启用备案
+  enable: true
+# 备案地区，例子：粤公网安备
+  beianloc:
+# 备案号，例子：44010602009049号
+  beianid:
+# 公安互联网备案图标，例子：/img/beian.png
+  beianicon:
+
+# 自定义鼠标样式
+mouse:
+# 启用
+  enable: true
+# 默认样式
+  default: /default.png
+# 悬浮及点击样式
+  pointer: /hover.png
+  
+# APlayer, 目前只支持网易云歌单
+aplayer:
+  # 启用aplayer
+  enable: true
+  # 歌单ID
+  musiclist: ""
+
 ```
 
 </details>
@@ -243,7 +323,7 @@ mathjax: true
 
 > 版本`v1.3.5`开始代码高亮已经用`codemirror`替换了`highlight.js`，
 > 但是 Hexo 默认的 highlight 配置还是需要关闭的。
-> ！！所以无比把 Hexo 默认的 highlight 配置改为`enable: flase` ！！
+> ！！所以务必把 Hexo 默认的 highlight 配置改为`enable: flase` ！！
 
 在博客根目录的`_config.yml`修改
 
@@ -301,6 +381,26 @@ categories: - 分类 1 - 分类 2
 tags: - 标签 1 - 标签 2
 mp3: http://domain.com/awesome.mp3
 cover: http://domain.com/awesome.jpg
+
+author: 第三方作者名
+socials: 
+  page: https://example
+avatar: /example.jpg
+slogan: example
+
+socials:
+    page: 
+        link: 社交平台链接
+        name: 需要的iconfont名称，例子：icon-bilibili-fill
+        path: iconfont的css文件位置，例子：/css/font_bilibili/iconfont.css
+    page2: 
+        link: 
+        name: 
+        path: 
+    page3: 
+        link: 
+        name: 
+        path: 
 ```
 
 ### 创建分类页
